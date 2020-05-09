@@ -12,19 +12,39 @@
 </head>
 <body>
   <div id="app" class="app">
-    <section class="led-container">
-      <div class="led led5" v-bind:style="{ 'background-color': led5CssColor }">
+    <div class="display">
+      <section class="led-container">
+        <div class="led led5" v-bind:style="{ 'background-color': led5CssColor }">
+        </div>
+        <div class="led led4" v-bind:style="{ 'background-color': led4CssColor }">
+        </div>
+        <div class="led led3" v-bind:style="{ 'background-color': led3CssColor }">
+        </div>
+        <div class="led led2" v-bind:style="{ 'background-color': led2CssColor }">
+        </div>
+        <div class="led led1" v-bind:style="{ 'background-color': led1CssColor }">
+        </div>
+      </section>
+      <section class="led-container">
+        <div class="led led5" v-bind:style="{ 'background-color': led15CssColor }">
+        </div>
+        <div class="led led4" v-bind:style="{ 'background-color': led14CssColor }">
+        </div>
+        <div class="led led3" v-bind:style="{ 'background-color': led13CssColor }">
+        </div>
+        <div class="led led2" v-bind:style="{ 'background-color': led12CssColor }">
+        </div>
+        <div class="led led1" v-bind:style="{ 'background-color': led11CssColor }">
+        </div>
+      </section>
+    </div>
+    <div class="controls">
+      <div class="slidecontainer">
+        Speed:
+        <input type="range" min="1" max="100" v-model="minutesDelimeter" @change="restartTimers" class="slider" id="myRange">
+        {{minutesDelimeter}} min per min
       </div>
-      <div class="led led4" v-bind:style="{ 'background-color': led4CssColor }">
-      </div>
-      <div class="led led3" v-bind:style="{ 'background-color': led3CssColor }">
-      </div>
-      <div class="led led2" v-bind:style="{ 'background-color': led2CssColor }">
-      </div>
-      <div class="led led1" v-bind:style="{ 'background-color': led1CssColor }">
-      </div>
-    </section>
-    minutes: {{(loopNumber-1)*5}}
+    </div>
   </div>
   <script src="scripts.js?v=1.0" type="module"></script>
 </body>
